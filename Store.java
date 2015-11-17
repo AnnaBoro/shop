@@ -23,7 +23,7 @@ public class Store {
     public void sold (Clothes cl, int num, Buyer b, int dateYMD) {
 
         for (int i = 0; i < clothes.length; i++) {
-            if (cl != null && clothes[i] != null && clothes[i].equals(cl)) {
+            if (cl != null && clothes[i] != null && clothes[i].equals(cl) && clothes[i].isSold() == false) {
                 clothes[i].setSold(true);
                 addBuyer(b);
                 addPurchase(new Purchase(cl, b, dateYMD, num));
